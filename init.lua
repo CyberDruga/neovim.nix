@@ -53,9 +53,6 @@ vim.opt.splitbelow = true
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
--- set autoformatting
-vim.g.autoformat = true
-
 vim.wo.relativenumber = true
 
 vim.opt.scrolloff = 5
@@ -210,3 +207,9 @@ vim.keymap.set("n", "<leader>oc", function()
 	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 	vim.cmd(string.format("silent !code --goto %s:%s:%s", path, row, col))
 end, { silent = true, desc = "[o]pen current file on vs[c]ode" })
+
+-- set autoformatting
+vim.g.autoformat = true
+vim.keymap.set({ "n", "v" }, "<leader>ta", function()
+	vim.g.autoformat = not vim.g.autoformat
+end, { silent = true, desc = "Aligns text using [:]" })
