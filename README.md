@@ -22,4 +22,4 @@ Or:
 nix run .#small-nvim
 ```
 
-to run without language specific plugins.
+to run without language specific plugins 
