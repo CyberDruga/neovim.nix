@@ -119,8 +119,9 @@
               nix-doc
               lua-language-server
               nixd
-              stylua
               nil
+              nixfmt
+              stylua
               git
               ranger
               lazygit
