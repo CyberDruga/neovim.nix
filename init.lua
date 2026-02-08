@@ -212,4 +212,4 @@ end, { silent = true, desc = "[o]pen current file on vs[c]ode" })
 vim.g.autoformat = true
 vim.keymap.set({ "n", "v" }, "<leader>ta", function()
 	vim.g.autoformat = not vim.g.autoformat
-end, { silent = true, desc = "Aligns text using [:]" })
+end, { silent = true, desc = "Toggles [A]utoformat" })
