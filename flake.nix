@@ -24,9 +24,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    # };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -305,6 +305,10 @@
           nvim =
             { pkgs, name, ... }:
             pkgs.lib.attrsets.recursiveUpdate defaults {
+
+              settings = {
+                neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+              };
 
               categories = {
 

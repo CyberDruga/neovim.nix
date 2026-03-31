@@ -121,6 +121,8 @@ vim.cmd([[
 augroup diagnostics
   autocmd!
   autocmd FileType qf,sagarename,gitsigns-blame,fugitiveblame nmap <buffer> q <cmd>q<cr>
+  autocmd FileType vim nmap <buffer> q <cmd>q<cr>
+  autocmd FileType vim nmap <buffer> <esc> <cmd>q<cr>
   autocmd FileType sagarename nmap <buffer> <esc> <cmd>q<cr>
 augroup end
 ]])
@@ -207,6 +209,9 @@ vim.keymap.set("n", "<leader>oc", function()
 	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 	vim.cmd(string.format("silent !code --goto %s:%s:%s", path, row, col))
 end, { silent = true, desc = "[o]pen current file on vs[c]ode" })
+
+-- Enables UI2
+require("vim._core.ui2").enable()
 
 -- set autoformatting
 vim.g.autoformat = true

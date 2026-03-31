@@ -17,6 +17,7 @@ M.setup({
 	end,
 	formatters_by_ft = {
 		lua = { "stylua" },
+		nix = { "nixfmt" },
 		-- Conform can also run multiple formatters sequentially
 		-- python = { "isort", "black" },
 		--
@@ -26,6 +27,6 @@ M.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>ff", function()
 	M.format({ async = true, lsp_fallback = true })
 end, { desc = "[F]ormat buffer" })
