@@ -21,7 +21,7 @@
   description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     neovim-nightly-overlay = {
@@ -174,7 +174,7 @@
               todo-comments-nvim
               mini-nvim
               nvim-treesitter.withAllGrammars
-              render-markdown-nvim
+              markview-nvim
               oil-nvim
               guess-indent-nvim
               nvim-notify
@@ -374,7 +374,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
 
