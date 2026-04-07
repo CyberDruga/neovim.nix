@@ -2,10 +2,6 @@ require("lspsaga").setup({
 	lightbulb = {
 		enable = false,
 	},
-	ui = {
-		devicon = false,
-		foldericon = false,
-	},
 })
 
 vim.keymap.set("n", "gp", "<CMD>Lspsaga peek_definition<CR>", { silent = true, desc = "LSP: Peek Definition" })

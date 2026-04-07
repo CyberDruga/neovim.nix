@@ -3,5 +3,9 @@ require("markview.spec").setup({
 		tables = {
 			use_virt_lines = true,
 		},
+		code_blocks = {
+			sign = false,
+			style = "simple",
+		},
 	},
 })
