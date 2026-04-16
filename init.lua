@@ -69,6 +69,9 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.list = false
 
+-- NOTE: Disables modeline. Turns out it might enable remote code execution
+vim.o.modeline = false
+
 vim.notify = require("notify")
 vim.print = require("notify")
 
