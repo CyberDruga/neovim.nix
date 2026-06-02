@@ -335,7 +335,14 @@
               # (and other information to pass to lua)
             };
 
-          small-nvim = { pkgs, name, ... }: defaults;
+          small-nvim =
+            { pkgs, name, ... }:
+            pkgs.lib.attrsets.recursiveUpdate defaults {
+
+              settings = {
+                neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+              };
+            };
         };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.
