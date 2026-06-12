@@ -4,7 +4,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.have_nerd_font = true
+-- Firenvim doesn't support nerd fonts for some reason
+vim.g.have_nerd_font = not vim.g.started_by_firenvim
 
 -- Make line numbers default
 vim.opt.number = true
