@@ -1,6 +1,6 @@
--- if not vim.g.started_by_firenvim then
--- 	vim.g.barbar_auto_setup = false
--- end
+if vim.g.started_by_firenvim then
+	vim.g.barbar_auto_setup = false
+end
 
 vim.keymap.set("n", "<m-l>", "<cmd>BufferNext<CR>", { silent = true, desc = "Go to next buffer" })
 vim.keymap.set("n", "<m-h>", "<cmd>BufferPrevious<CR>", { silent = true, desc = "Go to previous buffer" })

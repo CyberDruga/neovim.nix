@@ -24,6 +24,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
+    jj-nvim = {
+      url = "github:NicolasGB/jj.nvim";
+      flake = false;
+    };
+
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -203,14 +208,7 @@
               (pkgs.callPackage ./packages/ranger-patched.nix { })
               nvim-web-devicons
               plenary-nvim
-              (mkPlugin "jj.nvim" (
-                pkgs.fetchFromGitHub {
-                  owner = "NicolasGB";
-                  repo = "jj.nvim";
-                  rev = "9d9e2379fdf645b65482fac93eab1193fbe8794e";
-                  hash = "sha256-r/nUDhgRMtLYvIOCTJ/hrx7jZczUHJcH4Smbz52oqfk=";
-                }
-              ))
+              (mkPlugin "jj.nvim" inputs.jj-nvim)
             ];
             debugger = [
               nvim-dap
