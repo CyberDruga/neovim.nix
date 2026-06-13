@@ -333,11 +333,23 @@
               # (and other information to pass to lua)
             };
 
+          test-nvim =
+            { pkgs, name, ... }:
+            pkgs.lib.attrsets.recursiveUpdate defaults {
+
+              settings = {
+                aliases = [ "tnvim" ];
+                wrapRc = false;
+                neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+              };
+            };
+
           small-nvim =
             { pkgs, name, ... }:
             pkgs.lib.attrsets.recursiveUpdate defaults {
 
               settings = {
+                aliases = [ "snvim" ];
                 neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
               };
             };
