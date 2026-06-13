@@ -160,6 +160,7 @@
               lazy-nvim
               comment-nvim
               gitsigns-nvim
+              multicursor-nvim
               which-key-nvim
               telescope-nvim
               telescope-fzf-native-nvim
