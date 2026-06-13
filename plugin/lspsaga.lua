@@ -1,3 +1,7 @@
+if vim.g.started_by_firenvim then
+	return
+end
+
 require("lspsaga").setup({
 	lightbulb = {
 		enable = false,
