@@ -222,8 +222,10 @@ vim.keymap.set("n", "<leader>oc", function()
 	vim.cmd(string.format("silent !code --goto %s:%s:%s", path, row, col))
 end, { silent = true, desc = "[o]pen current file on vs[c]ode" })
 
--- Enables UI2
-require("vim._core.ui2").enable()
+if vim.version.ge("0.13", vim.version) then
+	-- Enables UI2
+	require("vim._core.ui2").enable()
+end
 
 -- set autoformatting
 vim.g.autoformat = true
