@@ -205,6 +205,14 @@ vim.keymap.set(
 	{ expr = true, silent = true, desc = "Moves cursor down by a visual line" }
 )
 
+vim.keymap.set("n", "<leader>tv", function()
+	if vim.o.virtualedit == "" then
+		vim.o.virtualedit = "all"
+		return
+	end
+	vim.o.virtualedit = ""
+end, { desc = "Toggle virtualedit" })
+
 vim.keymap.set("n", "<leader>oc", function()
 	local path = vim.api.nvim_buf_get_name(0)
 	if path == "" then
