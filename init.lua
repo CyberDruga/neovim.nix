@@ -152,8 +152,8 @@ vim.keymap.set("n", "<leader>gb", "<CMD>Git blame<CR>", { silent = true, desc = 
 -- vim.keymap.set('n', '<', '<<_', { noremap = true, silent = true })
 -- vim.keymap.set('n', '>', '>>_', { noremap = true, silent = true })
 
-vim.keymap.set("v", "<", "<<gv", { noremap = true, silent = true, desc = "Ident backwards" })
-vim.keymap.set("v", ">", ">>gv", { noremap = true, silent = true, desc = "Ident forwards" })
+vim.keymap.set("v", "<", "<_gv", { noremap = true, silent = true, desc = "Ident backwards" })
+vim.keymap.set("v", ">", ">_gv", { noremap = true, silent = true, desc = "Ident forwards" })
 
 vim.keymap.set("n", "<c-h>", "<c-w>h", { silent = true, desc = "Move focus left" })
 vim.keymap.set("n", "<c-j>", "<c-w>j", { silent = true, desc = "Move focus down" })
